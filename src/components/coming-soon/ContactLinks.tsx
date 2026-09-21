@@ -33,7 +33,7 @@ const links = [
     label: 'Instagram',
     handle: '@orbitandoclub',
     icon: InstagramIcon,
-    hover: 'hover:bg-orb-magenta hover:text-orb-white',
+    hover: 'hover:bg-orb-magenta hover:text-orb-paper',
     external: true,
   },
   {
@@ -41,7 +41,7 @@ const links = [
     label: 'LinkedIn',
     handle: 'Orbitando',
     icon: LinkedInIcon,
-    hover: 'hover:bg-orb-cyan',
+    hover: 'hover:bg-orb-cyan hover:text-orb-ink',
     external: true,
   },
   {
@@ -49,7 +49,7 @@ const links = [
     label: 'Mail',
     handle: 'Escribínos',
     icon: MailIcon,
-    hover: 'hover:bg-orb-yellow',
+    hover: 'hover:bg-orb-yellow hover:text-orb-ink',
     external: false,
   },
 ]
@@ -71,7 +71,7 @@ export function ContactLinks() {
               {...(link.external
                 ? { target: '_blank', rel: 'noopener noreferrer' }
                 : {})}
-              className={`focus-ring shadow-hard flex items-center gap-3 border-2 border-orb-black bg-orb-white px-3 py-3 transition-colors active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm ${link.hover}`}
+              className={`focus-ring shadow-hard flex items-center gap-3 border-2 border-orb-fg bg-orb-surface px-3 py-3 text-orb-fg transition-colors active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm ${link.hover}`}
             >
               <Icon />
               <span className="min-w-0 text-left">

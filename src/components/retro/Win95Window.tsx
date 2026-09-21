@@ -78,7 +78,7 @@ export function Win95Window({
         : {})}
     >
       <div
-        className={`w-full overflow-hidden border-2 border-orb-black bg-orb-white shadow-hard ${className}`}
+        className={`w-full overflow-hidden border-2 border-orb-fg bg-orb-surface shadow-hard ${className}`}
       >
         <TitleBar title={title} onMinimize={onMinimize} onDragStart={handleDragStart} />
         <div className="rainbow-rule" />

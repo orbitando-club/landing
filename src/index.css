@@ -1,20 +1,57 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --orb-bg: #f3f3f3;
+  --orb-fg: #070708;
+  --orb-surface: #ffffff;
+  --orb-panel: #070708;
+  --orb-muted: rgba(7, 7, 8, 0.5);
+  --orb-copy: rgba(7, 7, 8, 0.8);
+  --orb-shadow: 4px 4px 0 #070708;
+  --orb-shadow-sm: 2px 2px 0 #070708;
+  --orb-grid: rgba(7, 7, 8, 0.06);
+  --orb-inset-face: #ffffff;
+  color-scheme: light;
+}
+
+html.dark {
+  --orb-bg: #070708;
+  --orb-fg: #f3f3f3;
+  --orb-surface: #161618;
+  --orb-panel: #070708;
+  --orb-muted: rgba(243, 243, 243, 0.55);
+  --orb-copy: rgba(243, 243, 243, 0.8);
+  --orb-shadow: 4px 4px 0 #f3f3f3;
+  --orb-shadow-sm: 2px 2px 0 #f3f3f3;
+  --orb-grid: rgba(243, 243, 243, 0.08);
+  --orb-inset-face: #070708;
+  color-scheme: dark;
+}
+
 @theme inline {
   --color-orb-cyan: #00bed6;
   --color-orb-magenta: #e05fa3;
   --color-orb-yellow: #ffd33b;
   --color-orb-orange: #eb640c;
   --color-orb-green: #266840;
-  --color-orb-bg: #f3f3f3;
+  --color-orb-bg: var(--orb-bg);
+  --color-orb-fg: var(--orb-fg);
+  --color-orb-surface: var(--orb-surface);
+  --color-orb-panel: var(--orb-panel);
+  --color-orb-muted: var(--orb-muted);
+  --color-orb-copy: var(--orb-copy);
   --color-orb-black: #070708;
   --color-orb-white: #ffffff;
+  --color-orb-ink: #070708;
+  --color-orb-paper: #ffffff;
 
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
 
-  --shadow-hard: 4px 4px 0 #070708;
-  --shadow-hard-sm: 2px 2px 0 #070708;
+  --shadow-hard: var(--orb-shadow);
+  --shadow-hard-sm: var(--orb-shadow-sm);
 }
 
 *,
@@ -47,8 +84,8 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--color-orb-black);
-  background-color: var(--color-orb-bg);
+  color: var(--orb-fg);
+  background-color: var(--orb-bg);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -69,18 +106,24 @@ body {
 }
 
 .grid-bg {
-  background-color: var(--color-orb-bg);
+  background-color: var(--orb-bg);
   background-image:
-    linear-gradient(to right, rgba(7, 7, 8, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(7, 7, 8, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, var(--orb-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--orb-grid) 1px, transparent 1px);
   background-size: 24px 24px;
   background-attachment: fixed;
 }
 
 .win95-border-inset {
-  border: 2px solid var(--color-orb-black);
-  border-bottom-color: var(--color-orb-white);
-  border-right-color: var(--color-orb-white);
+  border: 2px solid var(--orb-fg);
+  border-bottom-color: var(--orb-inset-face);
+  border-right-color: var(--orb-inset-face);
+}
+
+.win95-chrome {
+  border: 2px solid #070708;
+  border-bottom-color: #ffffff;
+  border-right-color: #ffffff;
 }
 
 .titlebar-rainbow {
@@ -107,7 +150,7 @@ body {
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid var(--color-orb-black);
+  outline: 2px solid var(--orb-fg);
   outline-offset: 2px;
 }
 

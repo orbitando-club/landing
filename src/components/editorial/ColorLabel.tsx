@@ -20,7 +20,7 @@ export function ColorLabel({ text, color, className = '' }: ColorLabelProps) {
       initial={{ opacity: 0, y: -6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.25 }}
-      className={`inline-block border-2 border-orb-black px-2 py-0.5 font-display text-[10px] font-bold uppercase tracking-wider text-orb-black shadow-hard-sm ${colorClasses[color]} ${className}`}
+      className={`inline-block border-2 border-orb-ink px-2 py-0.5 font-display text-[10px] font-bold uppercase tracking-wider text-orb-ink shadow-hard-sm ${colorClasses[color]} ${className}`}
     >
       {text}
     </motion.span>
