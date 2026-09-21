@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-orb-cyan: #00bed6;
+  --color-orb-magenta: #e05fa3;
+  --color-orb-yellow: #ffd33b;
+  --color-orb-orange: #eb640c;
+  --color-orb-green: #266840;
+  --color-orb-bg: #f3f3f3;
+  --color-orb-black: #070708;
+  --color-orb-white: #ffffff;
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+
+  --shadow-hard: 4px 4px 0 #070708;
+  --shadow-hard-sm: 2px 2px 0 #070708;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-orb-black);
+  background-color: var(--color-orb-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.shadow-hard {
+  box-shadow: var(--shadow-hard);
+}
+
+.shadow-hard-sm {
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.grid-bg {
+  background-color: var(--color-orb-bg);
+  background-image:
+    linear-gradient(to right, rgba(7, 7, 8, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(7, 7, 8, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
+}
+
+.win95-border-inset {
+  border: 2px solid var(--color-orb-black);
+  border-bottom-color: var(--color-orb-white);
+  border-right-color: var(--color-orb-white);
+}
+
+.titlebar-rainbow {
+  background: linear-gradient(
+    90deg,
+    #00bed6 0%,
+    #266840 22%,
+    #ffd33b 48%,
+    #eb640c 74%,
+    #e05fa3 100%
+  );
+}
+
+.rainbow-rule {
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    #00bed6 0%,
+    #266840 22%,
+    #ffd33b 48%,
+    #eb640c 74%,
+    #e05fa3 100%
+  );
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-orb-black);
+  outline-offset: 2px;
+}
+
+.orbit-spin {
+  animation: orbit-spin 80s linear infinite;
+}
+
+.orbit-spin-reverse {
+  animation: orbit-spin 110s linear infinite reverse;
+}
+
+.blink {
+  animation: blink 1.2s steps(2) infinite;
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.2;
+  }
+}
